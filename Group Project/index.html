@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <header>
+            <nav>
+                <h1 class="logo">Yun & Reena BMW</h1>
+                <ul class="menu">
+                    <li><a href="#">Inventory</a>
+                        <ul class="aboutsub">
+                            <li><a href="#">Hybird & EV</a>
+                                <ul class="submenu2">
+                                    <li><a href="car.html">Hybird Vehicles</a></li>
+                                    <li><a href="car.html">The BMW i7 | ALL</a></li>
+                                    <li><a href="car.html">The BMW IX </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Popular Models</a>
+                                <ul class="submenu2">
+                                    <li><a href="#">2024 BMW 4 series</a></li>
+                                    <li><a href="#">2024 BMW M4</a></li>
+                                    <li><a href="#">2024 BMW X5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Showroom</a>
+                                <ul class="submenu2">
+                                    <li><a href="#">Downtown</a></li>
+                                    <li><a href="#">Burnaby</a></li>
+
+                                </ul>
+                            </li>
+                            <li><a href="#">Demo</a>
+                                <ul class="submenu2">
+                                    <li><a href="#">Book demo appointment</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Service & Parts</a>
+                        <ul class="aboutsub">
+                            <li><a href="#">Value Service Package</a></li>
+                            <li><a href="#">Book Your Serive Appointment</a></li>
+                            <li><a href="#">Extended Warranty</a></li>
+                            <li><a href="#">Parts & Accesories</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="#">Financial Service</a>
+                        <ul class="submenu">
+                            <li><a href="#">Finance Options</a>
+                            <li><a href="#">Credit Application</a>
+                            <li><a href="#">Lease Options</a>
+                            <li><a href="#">Lease Return</a>
+
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li><a href="login.html">Login</a>
+
+                    </li>
+
+            </nav>
+    </div>
+    <div class="container zone ">
+        <h1>Get your Car today</h1>
+    </div>
+    <div class="image-gallery">
+        <div id="shop">
+            <a href=""><img src="images/528732.jpg" alt=""></a>
+            <p>Shop</p>
+        </div>
+        <div id="pre">
+            <a href=""><img src="images/FEPKD9qXwAEbWA4.jpg_large" alt=""></a>
+            <p>Pre Owned</p>
+        </div>
+        <div id="service">
+            <a href=""><img src="images/Service_plan_1920x1080.jpg.asset.1699636924137.jpg" alt=""></a>
+            <p>Service </p>
+        </div>
+        <div id="lifestyle">
+            <a href=""><img src="images/v7bc4FHKKC4PBCYBrwOGuMnWfIQwt6KGy4M2wIQm.jpg" alt=""></a>
+            <p>lifestyle</p>
+        </div>
+    </div>
+
+    <footer class="footer ">
+        <div class="container">
+            <h1>Have no idea with what car suit you the most?</h1>
+            <br>
+            <form id="bmwForm">
+                <label for="purpose">Select your purpose:</label><br>
+                <input type="radio" id="commuting" name="purpose" value="commuting">
+                <label for="commuting">Commuting</label><br>
+                <input type="radio" id="family" name="purpose" value="family">
+                <label for="family">Family trips</label><br>
+                <label for="familySize">Number of family members:</label>
+                <input type="number" id="familySize" name="familySize" min="1"><br>
+                <button id="submitButton" type="submit">Click Here</button>
+            </form>
+        </div>
+
+        <script>
+            document.getElementById('bmwForm').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent form submission
+
+                var purpose = document.querySelector('input[name="purpose"]:checked').value;
+                var familySize = parseInt(document.getElementById('familySize').value);
+
+                // Suggestions based on user's inputs
+                var suggestion = getSuggestion(purpose, familySize);
+
+                alert(suggestion);
+            });
+
+            function getSuggestion(purpose, familySize) {
+                // Your suggestion logic goes here
+                // This is just a simple example
+                var suggestion = "";
+
+                if (purpose === "commuting" && familySize <= 4) {
+                    suggestion = "You might be interested in BMW 3 Series.";
+                } else if (purpose === "family" && familySize > 7) {
+                    suggestion = "Your family size is too large for our standard models. Please consider custom options or larger vehicles from other brands.";
+                } else if (purpose === "family" && familySize > 4) {
+                    suggestion = "Consider BMW X5 for your family trips.";
+                } else {
+                    suggestion = "We have various models that might suit your needs. Visit our showroom for personalized assistance.";
+                }
+
+                return suggestion;
+            }
+        </script>
+
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>CONTACT</h4>
+                    <ul>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Connected</a></li>
+                        <li><a href="#">Schedule</a></li>
+                        <li><a href="#">BMW APP</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>LINKS</h4>
+                    <ul>
+                        <li><a href="#">BMW</a></li>
+                        <li><a href="#">Retails</a></li>
+                        <li><a href="#">Inventory</a></li>
+                        <li><a href="#">Finance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>EXPERIENCE</h4>
+                    <ul>
+                        <li><a href="#">BMW i</a></li>
+                        <li><a href="#">Carrer</a></li>
+                        <li><a href="#">Sales</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>LEGAL</h4>
+                    <ul>
+                        <li><a href="#">Cookies </a></li>
+                        <li><a href="#">Policy</a></li>
+                        <li><a href="#">Responder</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+</body>
+
+</html>
